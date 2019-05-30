@@ -39,12 +39,12 @@ The main python project can be found under `scripts/MRS-DP`
 5- If any other commands need to be included in the PATH, follow the same pattern of steps above.
 6- These commands can probably be included in the Dockerfile however we couldn't figure it out yet.
 
-# TO COPY FILES FROM HOST TO DOCKER CONTAINER (AFTER RUNNING)
-## this copies one of more files from host to cont or vice versa
-## docker cp mycontainer:/src/. targetFolder
+## TO COPY FILES FROM HOST TO DOCKER CONTAINER (AFTER RUNNING)
+### this copies one of more files from host to cont or vice versa
+### docker cp mycontainer:/src/. targetFolder
 
 # Useful Docker commands 
-## https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
+### https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
 
 ### System Overview:
 
