@@ -13,19 +13,19 @@ The main python project can be found under `scripts/MRS-DP`
 - Save the tar.gz files in the root of the project (same level as Dockerfile)
 - Install Docker either by apt-get on Linux (docker.io) or app on Windows  
 - If you dont want to use Docker, just open the Dockerfile and follow the instructions (Ignore RUN, CMD, ENTRYPOINT and so on in this case)
+- docker build -f Dockerfile . -t MRS-Project --> This steps takes around 1 hour (depending on internet speed)
 
 ## On Windows
-- docker build -f Dockerfile . -t motassem
 - Install  VcXsrv Windows X Server
 - Open XLaunch
 - https://dev.to/darksmile92/run-gui-app-in-linux-docker-container-on-windows-host-4kde
 - Open powershell at the root folder where the Dockerfile is
 - set-variable -name DISPLAY -value <YOUR-IP>:0.0
-- docker run --privileged -d --rm --name=con1 -e DISPLAY=$DISPLAY motassem
+- docker run --privileged -d --rm --name=con1 -e DISPLAY=$DISPLAY MRS-Project
 - docker exec -it con1 /bin/bash
 
 ## ON LINUX
-- sudo docker run --privileged -d --rm --name=con1 --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" motassem
+- sudo docker run --privileged -d --rm --name=con1 --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" MRS-Project
 --> https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110?fbclid=IwAR065QdKw2-sD113SKqZi6jb9JBHTNdOruXWSAwaKGrYL1oMAQ4mnJGT9-4
 - docker exec -it con1 /bin/bash
 
@@ -40,7 +40,7 @@ The main python project can be found under `scripts/MRS-DP`
 6- These commands can probably be included in the Dockerfile however we couldn't figure it out yet \
 7- Go to scripts/MRS-DP and run MRS-DP.py with python3 \
 
-## TO COPY FILES FROM HOST TO DOCKER CONTAINER (AFTER RUNNING)
+#### TO COPY FILES FROM HOST TO DOCKER CONTAINER (AFTER RUNNING)
 - this copies one of more files from host to cont or vice versa
 --> docker cp mycontainer:/src/. targetFolder
 
