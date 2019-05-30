@@ -25,7 +25,7 @@ Note: These are the final files. We moved from BitBucket where all the actual ve
 - docker run --privileged -d --rm --name=con1 -e DISPLAY=$DISPLAY MRS-Project
 - docker exec -it con1 /bin/bash
 
-## ON LINUX
+## On Linux
 - sudo docker run --privileged -d --rm --name=con1 --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" MRS-Project
 --> https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110?fbclid=IwAR065QdKw2-sD113SKqZi6jb9JBHTNdOruXWSAwaKGrYL1oMAQ4mnJGT9-4
 - docker exec -it con1 /bin/bash
@@ -45,8 +45,11 @@ Note: These are the final files. We moved from BitBucket where all the actual ve
 - this copies one of more files from host to cont or vice versa
 --> docker cp mycontainer:/src/. targetFolder
 
-### Useful Docker commands 
+### Useful Docker commands espcially when troubleshooting
 --> https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
+--> docker container prune
+--> docker rmi $(docker images -q)
+--> use the last two commands when faced with errors such as can't find location of library or no disk space.
 
 ### System Overview:
 
