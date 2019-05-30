@@ -2,7 +2,7 @@
 
 ## What this is:
 
-This is the Design Project of Saif Elkholy and Moetassem Abdelazmim. The work is supervised by Prof. Jamie Near.
+This is the Design Project of Saif Elkholy and Moetassem Abdelazim. The work is supervised by Prof. Jamie Near.
 The main python project can be found under `scripts/MRS-DP`
 
 
