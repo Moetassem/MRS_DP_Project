@@ -36,8 +36,9 @@ The main python project can be found under `scripts/MRS-DP`
 2- export USER=/usr
 3- export FSLDIR=/usr/local/fsl
 4- source ${FSLDIR}/etc/fslconf/fsl.sh
-5- If any other commands need to be included in the PATH, follow the same pattern of steps above.
-6- These commands can probably be included in the Dockerfile however we couldn't figure it out yet.
+5- If any other commands need to be included in the PATH, follow the same pattern of steps above
+6- These commands can probably be included in the Dockerfile however we couldn't figure it out yet
+7- Go to scripts/MRS-DP and run MRS-DP.py with python3
 
 ## TO COPY FILES FROM HOST TO DOCKER CONTAINER (AFTER RUNNING)
 ### this copies one of more files from host to cont or vice versa
