@@ -32,20 +32,20 @@ The main python project can be found under `scripts/MRS-DP`
 # Installation Finalization
 ## After running the Docker container
 ### Run these commands in the container (Linux Shell)
-1- export PATH=$PATH:/usr/local/fsl/bin
-2- export USER=/usr
-3- export FSLDIR=/usr/local/fsl
-4- source ${FSLDIR}/etc/fslconf/fsl.sh
-5- If any other commands need to be included in the PATH, follow the same pattern of steps above
-6- These commands can probably be included in the Dockerfile however we couldn't figure it out yet
-7- Go to scripts/MRS-DP and run MRS-DP.py with python3
+1- export PATH=$PATH:/usr/local/fsl/bin \
+2- export USER=/usr \
+3- export FSLDIR=/usr/local/fsl \
+4- source ${FSLDIR}/etc/fslconf/fsl.sh \
+5- If any other commands need to be included in the PATH, follow the same pattern of steps above \
+6- These commands can probably be included in the Dockerfile however we couldn't figure it out yet \
+7- Go to scripts/MRS-DP and run MRS-DP.py with python3 \
 
 ## TO COPY FILES FROM HOST TO DOCKER CONTAINER (AFTER RUNNING)
-### this copies one of more files from host to cont or vice versa
-### docker cp mycontainer:/src/. targetFolder
+- this copies one of more files from host to cont or vice versa
+--> docker cp mycontainer:/src/. targetFolder
 
-# Useful Docker commands 
-### https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
+### Useful Docker commands 
+--> https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
 
 ### System Overview:
 
