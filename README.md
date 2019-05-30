@@ -2,30 +2,50 @@
 
 ## What this is:
 
-This is the Design Project of Saif Elkholy and Moetassem Abdelazmim. The work is supervised by Prof. Jamie Near. The main goal of this repo is to offer good version control for the python port of the work Prof. Near has.
-
+This is the Design Project of Saif Elkholy and Moetassem Abdelazmim. The work is supervised by Prof. Jamie Near.
 The main python project can be found under `scripts/MRS-DP`
 
 
-### System requirements:
+# General Installation:
+- Install ANTS tar.gz from https://sourceforge.net/projects/advants/files/ANTS/ANTS_Latest/
+- Install iTKSnap tar.gz from https://sourceforge.net/projects/itk-snap/files/itk-snap/3.8.0-beta/itksnap-3.8.0-beta-20181028-Linux-x86_64.tar.gz/download
+ --> The two files above are quite big in size, they can't be included on Github. There might be a docker image of them that can be included in the Dockerfile instead (to explore).
+- Save the tar.gz files in the root of the project (same level as Dockerfile)
+- Install Docker either by apt-get on Linux (docker.io) or app on Windows  
+- If you dont want to use Docker, just open the Dockerfile and follow the instructions (Ignore RUN, CMD, ENTRYPOINT and so on in this case)
 
-- python3.6
-- python3.6-tk (tkinter for GUI)
-- python3-pip
-- python-wxtools
+## On Windows
+- docker build -f Dockerfile . -t motassem
+- Install  VcXsrv Windows X Server
+- Open XLaunch
+- https://dev.to/darksmile92/run-gui-app-in-linux-docker-container-on-windows-host-4kde
+- Open powershell at the root folder where the Dockerfile is
+- set-variable -name DISPLAY -value <YOUR-IP>:0.0
+- docker run --privileged -d --rm --name=con1 -e DISPLAY=$DISPLAY motassem
+- docker exec -it con1 /bin/bash
 
-### Installation:
-- `sudo apt-get install python3.6 python3.6-tk python3-pip python-wxtools`
-- sudo apt-get fsl, ants, c3_affine_tool linux packages. More info in the links below.
-- `cd {RepositoryHome}/scripts/MRS-DP`
-- `sudo pip3 install fslpy, antspy, nipype` //-r requirements.txt
-- `./MRS-DP.py`
+## ON LINUX
+- sudo docker run --privileged -d --rm --name=con1 --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" motassem
+--> https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110?fbclid=IwAR065QdKw2-sD113SKqZi6jb9JBHTNdOruXWSAwaKGrYL1oMAQ4mnJGT9-4
+- docker exec -it con1 /bin/bash
 
-Links: 
-1) Fsl:
-2) ANTs:
-3) c3d_affine_tool:
+# Installation Finalization
+## After running the Docker container
+### Run these commands in the container (Linux Shell)
+1- export PATH=$PATH:/usr/local/fsl/bin
+2- export USER=/usr
+3- export FSLDIR=/usr/local/fsl
+4- source ${FSLDIR}/etc/fslconf/fsl.sh
+5- If any other commands need to be included in the PATH, follow the same pattern of steps above.
+6- These commands can probably be included in the Dockerfile however we couldn't figure it out yet.
+
+# TO COPY FILES FROM HOST TO DOCKER CONTAINER (AFTER RUNNING)
+## this copies one of more files from host to cont or vice versa
+## docker cp mycontainer:/src/. targetFolder
+
+# Useful Docker commands 
+## https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
+
 ### System Overview:
 
 ![System Overview](https://bitbucket.org/selkholy/mrs-design-project/raw/6c892c5c5a9e8e546891f546bf54200a70894084/Diagrams/mrs-design-python-project.jpg)
-
