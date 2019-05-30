@@ -1,0 +1,10 @@
+data/*
+output/*
+struc/*
+scripts/MRS-DP/venv/*
+scripts/struc/*
+scripts/MRS-DP/.idea/*
+scripts/MRS-DP/struct/*
+scripts/MRS-DP/output/*
+scripts/MRS-DP/struct/temp/*
+*.pyc
