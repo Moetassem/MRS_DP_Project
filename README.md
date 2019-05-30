@@ -22,7 +22,7 @@ Note: Last command needs to be done only once, after that the image is cached an
 - Open XLaunch
 - https://dev.to/darksmile92/run-gui-app-in-linux-docker-container-on-windows-host-4kde
 - Open powershell at the root folder where the Dockerfile is
-- set-variable -name DISPLAY -value <YOUR-IP>:0.0
+- set-variable -name DISPLAY -value YOUR-IP:0.0
 - docker run --privileged -d --rm --name=con1 -e DISPLAY=$DISPLAY MRS-Project
 - docker exec -it con1 /bin/bash
 
