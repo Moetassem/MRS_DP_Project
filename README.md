@@ -15,6 +15,7 @@ Note: These are the final files. We moved from BitBucket where all the actual ve
 - Install Docker either by apt-get on Linux (docker.io) or app on Windows  
 - If you dont want to use Docker, just open the Dockerfile and follow the instructions (Ignore RUN, CMD, ENTRYPOINT and so on in this case)
 - docker build -f Dockerfile . -t MRS-Project --> This steps takes around 1 hour (depending on internet speed)
+Note: Last command needs to be done only once, after that the image is cached and you only need to run it.
 
 ## On Windows
 - Install  VcXsrv Windows X Server
@@ -33,12 +34,11 @@ Note: These are the final files. We moved from BitBucket where all the actual ve
 # Installation Finalization
 ## After running the Docker container
 ### Run these commands in the container (Linux Shell)
-1- export PATH=$PATH:/usr/local/fsl/bin \
+1- export PATH=$PATH:/usr/local/fsl/bin:/usr/src/mrs-design-project/ANTs-2.1.0-Linux/bin:/usr/src/mrs-design-project/itksnap-3.8.0-beta-20181028-Linux-gcc64/bin \
 2- export USER=/usr \
 3- export FSLDIR=/usr/local/fsl \
 4- source ${FSLDIR}/etc/fslconf/fsl.sh \
-5- If any other commands need to be included in the PATH, follow the same pattern of steps above \
-6- These commands can probably be included in the Dockerfile however we couldn't figure it out yet \
+Note: If any other commands need to be included in the PATH, follow the same pattern of steps above. \ These commands can probably be included in the Dockerfile however we couldn't figure it out yet \
 7- Go to scripts/MRS-DP and run MRS-DP.py with python3 \
 
 #### TO COPY FILES FROM HOST TO DOCKER CONTAINER (AFTER RUNNING)
