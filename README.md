@@ -5,6 +5,7 @@
 This is the Design Project of Saif Elkholy and Moetassem Abdelazim. The work is supervised by Prof. Jamie Near.
 The main python project can be found under `scripts/MRS-DP`
 
+Note: These are the final files. We moved from BitBucket where all the actual version control happened during the year.
 
 # General Installation:
 - Install ANTS tar.gz from https://sourceforge.net/projects/advants/files/ANTS/ANTS_Latest/
